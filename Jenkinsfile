@@ -58,10 +58,10 @@ pipeline{
                 label 'vm2-tester'
             }
             steps {
-                sh "rm -rf ./robottestapi"
+                sh "rm -rf ./assi_jenkins"
                 withCredentials([gitUsernamePassword(credentialsId: '79f5bea3-84ff-4a86-9932-bbfd03cb0431', gitToolName: 'git-tool')]) {
                     // Use withCredentials block to securely access credentials
-                    // sh 'git clone https://gitlab.com/sdp12/assi_jenkins.git'
+                    sh 'git clone https://gitlab.com/sdp12/assi_jenkins.git'
                 }
             }
         }
