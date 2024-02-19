@@ -81,7 +81,7 @@ pipeline{
             }
             steps{
                     // push the image to the gitlab registry with credentials
-                    withCredentials([usernamePassword(credentialsId: '86130d73-f735-4fd7-b9c7-6922adffce72', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
+                    withCredentials([usernamePassword(credentialsId: '79f5bea3-84ff-4a86-9932-bbfd03cb0431', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
                         sh 'docker login -u ${USERNAME} -p ${PASSWORD} registry.gitlab.com'
                         sh 'docker push registry.gitlab.com/autyauth1/softdevcicd'
                     }
@@ -103,7 +103,7 @@ pipeline{
                 label 'vm3-pre-prod'
             }
             steps {
-                    withCredentials([usernamePassword(credentialsId: '86130d73-f735-4fd7-b9c7-6922adffce72', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
+                    withCredentials([usernamePassword(credentialsId: '79f5bea3-84ff-4a86-9932-bbfd03cb0431', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
                         sh 'docker login -u ${USERNAME} -p ${PASSWORD} registry.gitlab.com'
                         sh 'docker pull registry.gitlab.com/autyauth1/softdevcicd'
                     }
