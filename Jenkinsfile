@@ -2,7 +2,7 @@ pipeline{
     agent any
 
     environment {
-        IMAGE_NAME = "registry.gitlab.com/autyauth1/softdevcicd"
+        IMAGE_NAME = "registry.gitlab.com/buaseefah/groupworkjenkins-jenkins"
     }
 
     stages{
@@ -83,9 +83,9 @@ pipeline{
                     // push the image to the gitlab registry with credentials
                     withCredentials([usernamePassword(credentialsId: '79f5bea3-84ff-4a86-9932-bbfd03cb0431', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
                         sh 'docker login -u ${USERNAME} -p ${PASSWORD} registry.gitlab.com'
-                        sh 'docker push registry.gitlab.com/autyauth1/softdevcicd'
+                        sh 'docker push registry.gitlab.com/buaseefah/groupworkjenkins-jenkins'
                     }
-                    sh 'docker rmi -f registry.gitlab.com/autyauth1/softdevcicd:latest'
+                    sh 'docker rmi -f registry.gitlab.com/buaseefah/groupworkjenkins-jenkins'
                     // sh "docker push registry.gitlab.com/autyauth1/softdevcicd"
             }
         }
@@ -105,7 +105,7 @@ pipeline{
             steps {
                     withCredentials([usernamePassword(credentialsId: '79f5bea3-84ff-4a86-9932-bbfd03cb0431', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
                         sh 'docker login -u ${USERNAME} -p ${PASSWORD} registry.gitlab.com'
-                        sh 'docker pull registry.gitlab.com/autyauth1/softdevcicd'
+                        sh 'docker pull registry.gitlab.com/buaseefah/groupworkjenkins-jenkins'
                     }
 
             }
