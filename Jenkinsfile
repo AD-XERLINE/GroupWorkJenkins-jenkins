@@ -59,7 +59,7 @@ pipeline{
             }
             steps {
                 sh "rm -rf ./robottestapi"
-                withCredentials([gitUsernamePassword(credentialsId: 'bf5db0d6-aa57-47db-b135-8a7b17933b81', gitToolName: 'git-tool')]) {
+                withCredentials([gitUsernamePassword(credentialsId: '79f5bea3-84ff-4a86-9932-bbfd03cb0431', gitToolName: 'git-tool')]) {
                     // Use withCredentials block to securely access credentials
                     sh 'git clone https://gitlab.com/sdp12/assi_jenkins.git'
                 }
